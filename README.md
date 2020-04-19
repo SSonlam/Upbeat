@@ -28,8 +28,8 @@ Future work to be done would be to clean up the code, and to implement a UI to g
 ## Instructions
 1. Pull repository
 2. Install Maven
-'''bash
+```bash
 mvn install
-'''
+```
 3. Locate "target" folder
 4. Use .jar file
