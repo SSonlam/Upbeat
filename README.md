@@ -10,7 +10,7 @@ The goal of our project was to alleviate some of the sadness during this pandemi
 Our desired UI would be that users can sign up to be put on our mailing list through a website, however we were not able to implement this portion right now. For the time being we just store an ArrayList of phone numbers hard coded into the program and text each number in the list.
 
 ## Implementation
-We implemented this by using the Spotify and the Twilio APIs. We first retrieve song URLs from the Spotify database. We filter it so that we only recieve songs with the "genre_seed" tag of "happy" songs. Then we pass the song URL into the UserInfo class to be checked if we have ever sent that User the song yet. If the song URL is unique then we pass the URL to the Twilio API which makes a call to send an SMS to a user. We have a scheduler function that sets the timer to text the User every day at 9am.
+We implemented this by using the Spotify and the Twilio APIs. We first retrieve song URLs from the Spotify database. We filter it so that we only recieve songs with the "genre_seed" tag of "happy" songs. Then we pass the song URL into the UserInfo class to be checked if we have ever sent that User the song yet. If the song URL is unique then we pass the URL to the Twilio API which makes a call to send an SMS to a user. We have a schedular function that is set to text users at 9AM everyday. We run the program on AWS EC2 instance so that the program be text our users everyday.
 
 ## Issues
 Issues we encountered were that Spotify only gives tokens that expire every 6 minutes, so we needed to implement an API call that generates a new token for us everytime our program is called from the schedular. This took a lot of time to figure out because something was off with our input going through the OAuth 2.0 check. We were eventually able to debug this by using a different method. We also were not able to get our code up and running on AWS. We had initially planned to have our app running on there 24/7 to be able to send texts to users everyday.
@@ -27,6 +27,7 @@ Future work to be done would be to clean up the code, and to implement a UI to g
 ## Tools
  - Spring Boot
  - Maven
+ - AWS
 
 ## Instructions
 1. Pull repository
